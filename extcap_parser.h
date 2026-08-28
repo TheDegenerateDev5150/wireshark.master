@@ -141,6 +141,10 @@ typedef struct _extcap_arg {
 
     char **pref_valptr;  /**< Pointer to the preference storage location holding the current value */
     char  *device_name;  /**< Name of the capture device this argument is associated with */
+    /* XXX - device_name is not parsed or added by this file, but by the pref
+     * callback in extcap.c, and is simply the same ifname that is given by
+     * callers to extcap_get_if_configuration, the same for each extcap_arg
+     * in a list of extcap_args. It should probably be removed from here. */
     GList *values;       /**< List of extcap_value entries for selector, radio, and multicheck arguments */
 } extcap_arg;
 
