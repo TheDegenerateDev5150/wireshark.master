@@ -205,6 +205,10 @@ extcap_complex *extcap_parse_complex(extcap_arg_type complex_type,
 /* Free a complex */
 void extcap_free_complex(extcap_complex *comp);
 
+/* Copy a complex */
+extcap_complex *
+extcap_copy_complex(const extcap_complex *comp);
+
 /* Print a complex value out for debug */
 
 /**
@@ -282,6 +286,9 @@ bool extcap_compare_is_default(extcap_arg *element, extcap_complex *test);
  * @param a Pointer to the extcap_arg structure to be freed.
  */
 void extcap_free_arg(extcap_arg *a);
+
+extcap_arg*
+extcap_copy_arg(const extcap_arg *a);
 
 /**
  * @brief Free entire toolbar control structure.
